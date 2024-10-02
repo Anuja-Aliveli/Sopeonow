@@ -1,0 +1,70 @@
+:root {
+    --dark-heading-1: #333333;
+    --dark-heading-2: #555555;
+    --dark-heading-3: #777777;
+    --dark-heading-4: #999999;
+    --dark-heading-5: #EEEEEE;
+    --dark-heading-6: #CCCCCC;
+    --light-heading-1: #FFFFFF;
+    --red-color-1: #FF6464;
+    --red-color-2: #FF6464B2;
+    --green-color-1: #5CB176;
+    --green-color-2: #5CB176B2;
+    --bg-color-indigo: #676795;
+    --bg-color-green: #72C090;
+    --bg-color-yellow: #F29D41;
+    --bg-color-red: #FF6464;
+    --bg-colour-blue-transition: linear-gradient(180deg, rgba(84, 56, 100, 0.9) 0%, rgba(118, 96, 131, 0.9) 100%);
+    --bg-colour-indigo-transition: linear-gradient(180deg, rgba(139, 67, 103, 0.8) 0%, rgba(139, 67, 103, 0.8) 100%);
+    --bg-colour-light-blue-transition: linear-gradient(100.36deg, rgba(103, 103, 149, 0.56) 1.92%, rgba(103, 103, 149, 0.56) 1.93%, rgba(235, 235, 255, 0.7) 100.29%);
+    --bg-colour-red-transition: linear-gradient(100.36deg, rgba(255, 162, 162, 0.5) 1.92%, rgba(255, 184, 223, 0.5) 100.29%);
+    --bg-colour-nav-bar: linear-gradient(90deg, #FFE0E0 1.36%, #FF6464 86.49%);
+    --bg-nav-bar: linear-gradient(179.66deg, #8B4367 0.09%, #343571 99.86%);
+    --bg-selected-icon: linear-gradient(126.87deg, rgba(255, 255, 255, 0.4) 6.07%, rgba(251, 251, 251, 0.1) 91.79%);
+    --bg-blue-cell: #C6F0C280;
+    --bg-red-cell: #FFE0E099;
+    --bg-yellow-cell: #F5BE6780;
+    --bg-indigo-cell: #EBEBFF;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 29.3px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 25.78px;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23.44px;
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+}
+
+h6 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.41px;
+}
