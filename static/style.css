@@ -105,11 +105,16 @@ nav {
 
 .sidebar {
     background: var(--bg-side-bar);
-    width: 100px !important;
     color: #FFFFFF;
-    justify-content: space-around;
 }
 
 .sidebar-icon {
-    font-size: 23.5px !important;
+    font-size: 18px !important;
+    margin-top: 15px;
+}
+
+.sidebar-icon:last-child {
+    background: var(--bg-selected-icon);
+    padding: 8px;
+    border-radius: 3px;
 }

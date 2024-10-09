@@ -34,52 +34,58 @@
   </head>
 
   <body>
-    <div>
-      <!-- Navbar Section -->
-      <nav
-        class="w-100 d-flex flex-row justify-content-start align-items-center"
+    <!-- Navbar Section -->
+    <nav class="w-100 d-flex flex-row justify-content-start align-items-center">
+      <div class="d-flex align-items-center p-2">
+        <span><i class="fa-solid fa-bars"></i></span>
+        <span class="ms-3 me-3">S/N</span>
+        <h4>Management Live</h4>
+      </div>
+
+      <div
+        class="nav-right-section h-100 d-flex justify-content-end align-items-center"
       >
-        <div class="d-flex align-items-center p-2">
-          <span><i class="fa-solid fa-bars"></i></span>
-          <span class="ms-3 me-3">S/N</span>
-          <h4>Management Live</h4>
+        <div class="d-flex align-items-center me-3">
+          <span class="text-white me-2">
+            <i class="fa-solid fa-house icon-size"></i>
+          </span>
+          <p class="text-white">Home</p>
         </div>
-
-        <div
-          class="nav-right-section h-100 d-flex justify-content-end align-items-center"
-        >
-          <div class="d-flex align-items-center me-3">
-            <span class="text-white me-2">
-              <i class="fa-solid fa-house icon-size"></i>
-            </span>
-            <p class="text-white">Home</p>
-          </div>
-          <div class="d-flex align-items-center me-3">
-            <span class="text-white me-2">
-              <i class="fa-solid fa-id-badge icon-size"></i>
-            </span>
-            <p class="text-white">Admissions</p>
-            <span class="text-white ms-2 icon-size">
-              <i class="fa-solid fa-chevron-down"></i>
-            </span>
-          </div>
-          <div class="profile-container p-1 me-3">
-            <p>AB</p>
-          </div>
+        <div class="d-flex align-items-center me-3">
+          <span class="text-white me-2">
+            <i class="fa-solid fa-id-badge icon-size"></i>
+          </span>
+          <p class="text-white">Admissions</p>
+          <span class="text-white ms-2 icon-size">
+            <i class="fa-solid fa-chevron-down"></i>
+          </span>
         </div>
-      </nav>
+        <div class="profile-container p-1 me-3">
+          <p>AB</p>
+        </div>
+      </div>
+    </nav>
 
-      <!-- Main Content Section -->
-      <div id="main" class="h-100">
-        <div
-          class="sidebar h-100 d-flex flex-column align-items-center"
-          id="sidebar"
-        ></div>
+    <!-- Main Content Section -->
+    <div id="main" class="container-fluid p-0 w-100 h-100">
+      <div class="row h-100">
+        <div class="col-1">
+          <div
+            class="sidebar h-100 d-flex flex-column align-items-center"
+            id="sidebar"
+          ></div>
+        </div>
+        <div class="col-3">
+          <p>Hello</p>
+        </div>
+        <div class="col-8">
+          <p>World</p>
+        </div>
       </div>
     </div>
 
     <!-- Link to External JS File -->
-    <script src="{% static 'script.js' %}"></script>
+    <script type="module" src="{% static 'script.js' %}"></script>
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script
