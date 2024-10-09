@@ -78,3 +78,66 @@ const registrationTime = document.getElementById('registrationTime');
 
 totalCount.textContent = managementData.visits.count;
 registrationTime.textContent = managementData.visits.time;
+
+// Completed Data
+const completedDataContainer = document.getElementById('completed-data');
+managementData.completed.forEach((item) => {
+  const completedOuterContainer = document.createElement('div');
+  completedOuterContainer.classList.add(
+    'w-40',
+    'me-2',
+    'mb-2',
+    'p-2',
+    'flex-grow-1',
+  );
+  completedOuterContainer.style.background = item.bg;
+
+  const firstCompletedDiv = document.createElement('div');
+  firstCompletedDiv.classList.add('d-flex', 'flex-row');
+
+  const secondCompletedDiv = document.createElement('div');
+  secondCompletedDiv.classList.add(
+    'd-flex',
+    'flex-row',
+    'align-items-center',
+    'justify-content-between',
+  );
+
+  const iconFirstContainer = document.createElement('span');
+  iconFirstContainer.classList.add('me-2');
+  iconFirstContainer.innerHTML = `<i class="fa-solid ${item.icon}"></i>`;
+  iconFirstContainer.style.color = item.color;
+
+  const titleFirstContainer = document.createElement('p');
+  titleFirstContainer.textContent = item.name;
+  titleFirstContainer.style.color = item.color;
+
+  const countSecondContainer = document.createElement('h5');
+  countSecondContainer.textContent = item.count;
+  countSecondContainer.style.color = item.color;
+
+  const sideContainer = document.createElement('div');
+  sideContainer.classList.add('d-flex', 'flex-row', 'align-items-center');
+
+  const iconSecondContainer = document.createElement('span');
+  iconSecondContainer.classList.add('timer-icon', 'me-2');
+  iconSecondContainer.innerHTML = `<i class="fa-regular fa-clock"></i>`;
+
+  const timerSecondContainer = document.createElement('span');
+  timerSecondContainer.textContent = item.time;
+  timerSecondContainer.classList.add(`${item.time_color}`);
+
+  sideContainer.appendChild(iconSecondContainer);
+  sideContainer.appendChild(timerSecondContainer);
+
+  firstCompletedDiv.appendChild(iconFirstContainer);
+  firstCompletedDiv.appendChild(titleFirstContainer);
+
+  secondCompletedDiv.appendChild(countSecondContainer);
+  secondCompletedDiv.appendChild(sideContainer);
+
+  completedOuterContainer.appendChild(firstCompletedDiv);
+  completedOuterContainer.appendChild(secondCompletedDiv);
+
+  completedDataContainer.appendChild(completedOuterContainer);
+});

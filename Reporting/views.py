@@ -4,7 +4,7 @@ import os
 from django.conf import settings
 
 from Reporting.templatetags.time_tags import seconds_to_hhmm
-from Reporting.utils import getKeyMetrics
+from Reporting.utils import getCompletedData, getKeyMetrics
 
 def renderHtml(request):
     json_file_path = os.path.join(settings.MEDIA_ROOT, 'management.json')
@@ -16,4 +16,5 @@ def renderHtml(request):
             'time' : seconds_to_hhmm(management_data['key_metrics']['registration']['time'])
         }
         management_data['key_metrics'] = getKeyMetrics(management_data['key_metrics'])
+        management_data['completed'] = getCompletedData(management_data['completed'])
     return render(request, 'index.html', {'management_data': management_data})
