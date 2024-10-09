@@ -154,3 +154,185 @@ def getZoneData(data):
 
         }
     return zoneData
+
+def doctor_chart_config(data):
+    doctor_data = data['barline-1']
+    
+    chart_options = {
+        "chart": {
+            "type": "line",
+            "height": 250
+        },
+        "series": [
+            {
+                "name": series["name"],
+                "type": series["type"],
+                "data": series["data"]
+            }
+            for series in doctor_data["y"]
+        ],
+        "stroke": {
+            "width": [4 if series["type"] == "line" else 0 for series in doctor_data["y"]]
+        },
+        "title": {
+            "text": doctor_data["title"]
+        },
+        "xaxis": {
+            "categories": doctor_data["x"]
+        },
+        "yaxis": [
+            {
+                "title": {
+                    "text": series["name"]
+                },
+                "opposite": index != 0
+            }
+            for index, series in enumerate(doctor_data["y"])
+        ]
+    }
+    
+    return chart_options
+
+def zone_charts_config(data):
+    zone_data = data['barpie-1']
+    
+    config = {
+        "chart": {
+            "type": 'line',
+            "height": 250
+        },
+        "series": [
+            {
+                "name": series["name"],
+                "type": series["type"],
+                "data": series["data"]
+            }
+            for series in zone_data["bar"]["y"]
+        ] + [{
+            "name": "Donut",
+            "type": "donut",
+            "data": zone_data["pie"]["y"]
+        }],
+        "labels": zone_data["pie"]["x"],
+        "stroke": {
+            "width": [0, 4, 0] 
+        },
+        "title": {
+            "text": zone_data["title"]
+        },
+        "xaxis": {
+            "categories": zone_data["bar"]["x"]
+        },
+        "yaxis": [
+            {
+                "title": {
+                    "text": "Total Patients"
+                }
+            },
+            {
+                "opposite": True,
+                "title": {
+                    "text": "Average Time"
+                }
+            }
+        ],
+        "plotOptions": {
+            "bar": {
+                "columnWidth": "50%"
+            },
+            "pie": {
+                "donut": {
+                    "size": "65%",
+                    "labels": {
+                        "show": True,
+                        "name": {
+                            "show": True
+                        },
+                        "value": {
+                            "show": True
+                        }
+                    }
+                }
+            }
+        },
+        "tooltip": {
+            "y": {
+                "formatter": "function (value, { series, seriesIndex, dataPointIndex, w }) { "
+                             "var time = " + str(zone_data['pie']['time']) + ";"
+                             "if (seriesIndex === 2) { "  
+                             "    return value + ' (' + time[dataPointIndex] + ' mins)'; "
+                             "} "
+                             "return value; "
+                             "}"
+            }
+        }
+    }
+    
+    return config
+
+
+def triage_chart_config(data):
+    triage_data = data['comparison-1']
+    
+    config = {
+        "chart": {
+            "type": 'line',
+            "height": 350
+        },
+        "series": [
+            {
+                "name": series["name"] + " (Count)",
+                "type": series["type"],
+                "data": series["data"]
+            }
+            for series in triage_data["y"]
+        ],
+        "stroke": {
+            "width": [0, 4, 0, 4],  # 0 for columns, 4 for lines
+            "curve": 'smooth'
+        },
+        "title": {
+            "text": triage_data["title"]
+        },
+        "xaxis": {
+            "categories": triage_data["x"]
+        },
+        "yaxis": [
+            {
+                "title": {
+                    "text": "Count"
+                }
+            },
+            {
+                "opposite": True,
+                "title": {
+                    "text": "Time (minutes)"
+                }
+            }
+        ],
+        "colors": ['#008FFB', '#00E396', '#FEB019', '#FF4560'],
+        "dataLabels": {
+            "enabled": False
+        },
+        "markers": {
+            "size": 5
+        },
+        "legend": {
+            "position": 'top'
+        },
+        "tooltip": {
+            "shared": True,
+            "intersect": False,
+            "y": {
+                "formatter": "function (y, { series, seriesIndex, dataPointIndex, w }) { "
+                             "if (seriesIndex % 2 === 0) { "
+                             "    return y.toFixed(0) + ' patients'; "
+                             "} else { "
+                             "    return y.toFixed(0) + ' minutes'; "
+                             "} "
+                             "}"
+            }
+        }
+    }
+    
+    return config

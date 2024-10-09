@@ -252,3 +252,27 @@ managementData.zonestats.red_zone.forEach((item, index) => {
 
   redContainer.appendChild(redDiv);
 });
+
+const doctorData = new ApexCharts(
+  document.querySelector('#doctorsChart'),
+  managementData.graphs.Doctor,
+);
+doctorData.render();
+
+const intervalChart = new ApexCharts(
+  document.querySelector('#intervalChart'),
+  managementData.graphs.interval,
+);
+intervalChart.render();
+
+const zoneChart = new ApexCharts(
+  document.querySelector('#zoneChart'),
+  managementData.graphs.Zone,
+);
+zoneChart.render();
+
+const triageChart = new ApexCharts(
+  document.querySelector('#triageChart'),
+  managementData.graphs.triage,
+);
+triageChart.render();

@@ -32,6 +32,9 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'style.css' %}" />
+
+    <!-- Apex Chart -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   </head>
 
   <body>
@@ -97,7 +100,7 @@
           </div>
           <div id="completed-data" class="d-flex flex-row flex-wrap mt-2"></div>
         </div>
-        <div class="col-6">
+        <div class="col-6 flex-grow-1">
           <div class="d-flex flex-row">
             <div class="zone-container me-2 flex-grow-05">
               <div class="zone p-1 mt-2 mb-1"><p>Zone Statistics</p></div>
@@ -115,6 +118,12 @@
               <div class="red p-1 mt-2 mb-1"><p>Red Zone</p></div>
               <div id="red-zone"></div>
             </div>
+            <div id="triageChart"></div>
+          </div>
+          <div class="d-flex flex-row">
+            <div id="zoneChart" class="w-25 flex-grow-1"></div>
+            <div id="intervalChart" class="w-25 flex-grow-1"></div>
+            <div id="doctorsChart" class="w-25 flex-grow-1"></div>
           </div>
         </div>
       </div>
