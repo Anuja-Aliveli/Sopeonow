@@ -141,3 +141,114 @@ managementData.completed.forEach((item) => {
 
   completedDataContainer.appendChild(completedOuterContainer);
 });
+
+const zoneContainer = document.getElementById('zone-data');
+managementData.zonestats.zone_stats.forEach((item) => {
+  const zoneDiv = document.createElement('div');
+  zoneDiv.classList.add(
+    'd-flex',
+    'flex-row',
+    'justify-content-between',
+    'p-1',
+    'mb-1',
+    'zone-bg',
+  );
+
+  const iconEle = document.createElement('span');
+  iconEle.innerHTML = `<i class="fa-solid ${item.icon}"></i>`;
+
+  const titleEle = document.createElement('h6');
+  titleEle.textContent = item.name;
+
+  zoneDiv.appendChild(iconEle);
+  zoneDiv.appendChild(titleEle);
+
+  zoneContainer.appendChild(zoneDiv);
+});
+
+const greenContainer = document.getElementById('green-zone');
+managementData.zonestats.green_zone.forEach((item, index) => {
+  const greenDiv = document.createElement('div');
+  greenDiv.classList.add(
+    'd-flex',
+    'flex-row',
+    'justify-content-center',
+    'align-items-center',
+    'p-1',
+    'mb-1',
+    'green-bg',
+  );
+
+  const iconEle = document.createElement('span');
+  iconEle.innerHTML = `<i class="fa-solid ${index < 3 ? '' : 'fa-clock'}"></i>`;
+
+  const titleEle = document.createElement('h6');
+  titleEle.classList.add('m-0', 'ms-2');
+  if (item.color) {
+    titleEle.classList.add(item.color);
+  }
+  titleEle.textContent = item.count;
+
+  greenDiv.appendChild(iconEle);
+  greenDiv.appendChild(titleEle);
+
+  greenContainer.appendChild(greenDiv);
+});
+
+const yellowContainer = document.getElementById('yellow-zone');
+managementData.zonestats.yellow_zone.forEach((item, index) => {
+  const yellowDiv = document.createElement('div');
+  yellowDiv.classList.add(
+    'd-flex',
+    'flex-row',
+    'justify-content-center',
+    'align-items-center',
+    'p-1',
+    'mb-1',
+    'yellow-bg',
+  );
+
+  const iconEle = document.createElement('span');
+  iconEle.innerHTML = `<i class="fa-solid ${index < 3 ? '' : 'fa-clock'}"></i>`;
+
+  const titleEle = document.createElement('h6');
+  titleEle.classList.add('m-0');
+  if (item.color) {
+    titleEle.classList.add(item.color);
+  }
+  titleEle.textContent = item.count;
+
+  yellowDiv.appendChild(iconEle);
+  yellowDiv.appendChild(titleEle);
+
+  yellowContainer.appendChild(yellowDiv);
+});
+
+const redContainer = document.getElementById('red-zone');
+managementData.zonestats.red_zone.forEach((item, index) => {
+  const redDiv = document.createElement('div');
+  redDiv.classList.add(
+    'd-flex',
+    'flex-row',
+    'justify-content-center',
+    'align-items-center',
+    'p-1',
+    'mb-1',
+    'red-bg',
+  );
+
+  const iconEle = document.createElement('span');
+  iconEle.innerHTML = `<i class="fa-solid ${index < 3 ? '' : 'fa-clock'}"></i>`;
+
+  const titleEle = document.createElement('h6');
+  titleEle.classList.add('m-0');
+  if (item.color) {
+    titleEle.classList.add(item.color);
+  }
+  titleEle.textContent = item.count;
+
+  redDiv.appendChild(iconEle);
+  redDiv.appendChild(titleEle);
+
+  redContainer.appendChild(redDiv);
+});

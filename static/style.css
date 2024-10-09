@@ -32,7 +32,7 @@ body {
     width: 98vw;
     height: 98vh;
     font-family: 'Roboto', sans-serif;
-    background-color: #edf0f5;
+    background-color: #FFFFFF;
     padding: 0;
     margin: 0;
 }
@@ -175,4 +175,57 @@ nav {
 
 .w-40 {
     width: 45%;
+}
+
+.zone {
+    background: var(--bg-color-indigo);
+    color: #FFFFFF;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.green {
+    background: var(--bg-color-green);
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+
+.yellow {
+    background: var(--bg-color-yellow);
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+
+.red {
+    background: var(--bg-color-red);
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+
+.flex-grow-05 {
+    flex-grow: 0.5;
+}
+
+.zone-bg {
+    background: var(--bg-indigo-cell);
+    border-radius: 4px;
+    color: var(--dark-heading-3);
+}
+
+.green-bg {
+    background: var(--bg-blue-cell);
+    border-radius: 4px;
+    color: var(--dark-heading-3);
+}
+
+.yellow-bg {
+    background: var(--bg-yellow-cell);
+    border-radius: 4px;
+    color: var(--dark-heading-3);
+}
+
+.red-bg {
+    background: var(--bg-red-cell);
+    border-radius: 4px;
+    color: var(--dark-heading-3);
 }

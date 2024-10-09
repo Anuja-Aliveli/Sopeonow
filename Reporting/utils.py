@@ -102,3 +102,55 @@ def getCompletedData(data):
         }
     ]
     return completedData
+
+def getZoneData(data):
+    zoneData = {
+            'zone_stats': [
+                {
+                    'icon': 'fa-users',
+                    'name': 'Total Visits',
+                },
+                {
+                    'icon': 'fa-timeline',
+                    'name': 'Active',
+                },{
+                    'icon': 'fa-suitcase-rolling',
+                    'name': 'Discharged',
+                },{
+                    'icon': 'fa-stopwatch',
+                    'name': 'Average Triage Time',
+                },{
+                    'icon': 'fa-stopwatch-20',
+                    'name': 'Average Hold time',
+                },{
+                    'icon': 'fa-user-clock',
+                    'name': 'Average Visit Time',
+                }
+                ],
+            'green_zone': [
+                {'key': 'total_visits_count', 'count': data['green']['total_visits_count'], 'color': ''},
+                {'key': 'active_count', 'count': data['green']['active_count'], 'color': ''},
+                {'key': 'discharge_count', 'count': data['green']['discharge_count'], 'color': ''},
+                {'key': 'avg_triage_tm', 'count': seconds_to_hhmm(data['green']['avg_triage_tm']), 'color': 'green-color-2'},
+                {'key': 'avg_visit_tm', 'count': seconds_to_hhmm(data['green']['avg_visit_tm']), 'color': 'red-color-2'},
+                {'key': 'avg_cons_tm', 'count': seconds_to_hhmm(data['green']['avg_cons_tm']), 'color': 'green-color-2'}
+                ],
+            'yellow_zone': [
+                {'key': 'total_visits_count', 'count': data['yellow']['total_visits_count'], 'color': ''},
+                {'key': 'active_count', 'count': data['yellow']['active_count'], 'color': ''},
+                {'key': 'discharge_count', 'count': data['yellow']['discharge_count'], 'color': ''},
+                {'key': 'avg_triage_tm', 'count': seconds_to_hhmm(data['yellow']['avg_triage_tm']), 'color': 'red-color-1'},
+                {'key': 'avg_visit_tm', 'count': seconds_to_hhmm(data['yellow']['avg_visit_tm']), 'color': 'red-color-2'},
+                {'key': 'avg_cons_tm', 'count': seconds_to_hhmm(data['yellow']['avg_cons_tm']), 'color': 'green-color-1'}
+                ],
+            'red_zone': [
+                {'key': 'total_visits_count', 'count': data['red']['total_visits_count'], 'color': ''},
+                {'key': 'active_count', 'count': data['red']['active_count'], 'color': ''},
+                {'key': 'discharge_count', 'count': data['red']['discharge_count'], 'color': ''},
+                {'key': 'avg_triage_tm', 'count': seconds_to_hhmm(data['red']['avg_triage_tm']), 'color': 'red-color-1'},
+                {'key': 'avg_visit_tm', 'count': seconds_to_hhmm(data['red']['avg_visit_tm']), 'color': 'green-color-1'},
+                {'key': 'avg_cons_tm', 'count': seconds_to_hhmm(data['red']['avg_cons_tm']), 'color': 'green-color-2'}
+            ]
+
+        }
+    return zoneData
