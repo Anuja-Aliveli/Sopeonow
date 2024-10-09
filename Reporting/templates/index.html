@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOPEONOW</title>
+    <title>Management Live</title>
     {% load static %}
 
     <!-- Google Fonts API -->
@@ -46,19 +46,19 @@
         class="nav-right-section h-100 d-flex justify-content-end align-items-center"
       >
         <div class="d-flex align-items-center me-3">
-          <span class="text-white me-2">
-            <i class="fa-solid fa-house icon-size"></i>
-          </span>
+          <span class="text-white me-2"
+            ><i class="fa-solid fa-house icon-size"></i
+          ></span>
           <p class="text-white">Home</p>
         </div>
         <div class="d-flex align-items-center me-3">
-          <span class="text-white me-2">
-            <i class="fa-solid fa-id-badge icon-size"></i>
-          </span>
+          <span class="text-white me-2"
+            ><i class="fa-solid fa-id-badge icon-size"></i
+          ></span>
           <p class="text-white">Admissions</p>
-          <span class="text-white ms-2 icon-size">
-            <i class="fa-solid fa-chevron-down"></i>
-          </span>
+          <span class="text-white ms-2 icon-size"
+            ><i class="fa-solid fa-chevron-down"></i
+          ></span>
         </div>
         <div class="profile-container p-1 me-3">
           <p>AB</p>
@@ -83,6 +83,9 @@
         </div>
       </div>
     </div>
+
+    <!-- Embed management_data for use in script.js using json_script -->
+    {{ management_data|json_script:"managementData" }}
 
     <!-- Link to External JS File -->
     <script type="module" src="{% static 'script.js' %}"></script>
