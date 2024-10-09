@@ -71,3 +71,10 @@ managementData.key_metrics.forEach((item) => {
 
   keyMetricsEle.appendChild(outerDiv);
 });
+
+// Total Visits
+const totalCount = document.getElementById('totalVisits');
+const registrationTime = document.getElementById('registrationTime');
+
+totalCount.textContent = managementData.visits.count;
+registrationTime.textContent = managementData.visits.time;

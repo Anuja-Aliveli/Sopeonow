@@ -114,7 +114,8 @@ nav {
     margin-top: 15px;
 }
 
-.sidebar-icon:last-child {
+.sidebar-icon:last-child,
+.count-data {
     background: var(--bg-selected-icon);
     padding: 8px;
     border-radius: 3px;
@@ -159,4 +160,15 @@ nav {
     background: var(--bg-colour-red-transition);
     color: #FFFFFF;
     border-radius: 10px;
+}
+
+.count-container {
+    background: var(--bg-color-indigo);
+    border-radius: 10px;
+    color: #FFFFFF;
+}
+
+.right-border {
+    border-right: 1px solid #FFFFFF;
+    padding-right: 20px;
 }

@@ -55,8 +55,8 @@ def getKeyMetrics(data):
   {
     'caption': 'UCC Discharge to IP Bed Allotment',
     'name': 'IP Transfers',
-     'time': seconds_to_hhmm(data['cons_done']['time']),
-    'count': data['cons_done']['count'],
+     'time': seconds_to_hhmm(data['ip_transfers']['completed']['time']),
+    'count': data['ip_transfers']['completed']['count'],
     'time_color': 'green-color-2'
   },
 ]
