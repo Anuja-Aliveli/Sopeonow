@@ -125,7 +125,7 @@ managementData.completed.forEach((item) => {
 
   const timerSecondContainer = document.createElement('span');
   timerSecondContainer.textContent = item.time;
-  timerSecondContainer.classList.add(`${item.time_color}`);
+  timerSecondContainer.classList.add(`${item.timer}`);
 
   sideContainer.appendChild(iconSecondContainer);
   sideContainer.appendChild(timerSecondContainer);

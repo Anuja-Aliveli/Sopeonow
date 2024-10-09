@@ -70,7 +70,8 @@ def getCompletedData(data):
             'count': data['Payor']['Insurance']['count'],
             'time': seconds_to_hhmm(data['Payor']['Insurance']['time']),
             'bg': '#E8D9E14D',
-            'color': '#8B4367'
+            'color': '#8B4367',
+            'timer': 'green-color-1'
         },
         {
             'icon': 'fa-wallet',
@@ -78,7 +79,8 @@ def getCompletedData(data):
             'count': data['Payor']['Self_Pay']['count'],
             'time': seconds_to_hhmm(data['Payor']['Self_Pay']['time']),
             'bg': '#DDD7E033',
-            'color': '#543864'
+            'color': '#543864',
+            'timer': 'red-color-1'
         },
         {
             'icon': 'fa-earth-oceania',
@@ -87,6 +89,7 @@ def getCompletedData(data):
             'time': seconds_to_hhmm(data['Residency']['International']['time']),
             'bg' : '#F8F8FF80',
             'color': '#343571',
+            'timer': 'red-color-1'
         },
         {
             'icon': 'fa-location-dot',
@@ -94,7 +97,8 @@ def getCompletedData(data):
             'count': data['Residency']['Local']['count'],
             'time': seconds_to_hhmm(data['Residency']['Local']['time']),
             'bg': '#EEEEEE80',
-            'color': '#555555'
+            'color': '#555555',
+            'timer': 'green-color-2'
         }
     ]
     return completedData
