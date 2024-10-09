@@ -25,6 +25,7 @@
     --bg-red-cell: #FFE0E099;
     --bg-yellow-cell: #F5BE6780;
     --bg-indigo-cell: #EBEBFF;
+    --bg-border: #DDDDDD;
 }
 
 body {
@@ -117,4 +118,45 @@ nav {
     background: var(--bg-selected-icon);
     padding: 8px;
     border-radius: 3px;
+}
+
+.div-border {
+    border: 1px solid #DDDDDD;
+    border-radius: 10px;
+    background: #FFFFFF;
+}
+
+.timer-icon {
+    color: #AAAAAA;
+    font-size: 15px;
+}
+
+.metric-container:first-child {
+    background: #CCCCDC59;
+}
+
+.metric-container:not(:nth-child(2)) {
+    color: var(--dark-heading-4);
+}
+
+.red-color-1 {
+    color: var(--red-color-1);
+}
+
+.red-color-2 {
+    color: var(--red-color-2);
+}
+
+.green-color-1 {
+    color: var(--green-color-1);
+}
+
+.green-color-2 {
+    color: var(--green-color-2);
+}
+
+.key-metrics-bg {
+    background: var(--bg-colour-red-transition);
+    color: #FFFFFF;
+    border-radius: 10px;
 }
